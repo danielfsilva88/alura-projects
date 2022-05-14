@@ -18,7 +18,7 @@
 - bigger than `>` , small than `<`
 - one line boolean check
 - `if`, `else`, and `elif`
-- *bool* and *float* types
+- *bool* (**True** and **False**) and *float* types
 
 ## 4. Game (jogo) sequence
 - loop using `while` and enter condition
