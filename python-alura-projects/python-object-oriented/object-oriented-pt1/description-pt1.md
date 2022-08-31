@@ -148,3 +148,58 @@ Saldo de 70.4 do titular Nico
 >>> conta.extrato()
 Saldo de 60.5 do titular Nico
 ```
+
+### 3.2. Class method's problem
+
+``` python
+class Pessoa:
+    def __init__(self, nome, sobrenome):
+        self.nome = nome
+        self.sobrenome = sobrenome
+
+    exibe_nome_e_sobrenome():
+        print("{0} {1}".format(self.nome, self.sobrenome))
+
+
+pessoa = Pessoa("Chalita", "Steppat")
+pessoa.exibe_nome_e_sobrenome()
+```
+
+<details>
+<summary>How many errors is there in this code?</summary>
+<br>
+There are two errors. This code doesn't declare method using `def` and the method doesn't receive `self` as parameter.
+</details>
+
+### 3.4. Content review
+
+![UML class Conta example](.\auxiliary_files\3_4_UML_class_conta.PNG)
+
+### 3.5. None and garbage collector
+
+![object without reference example](.\auxiliary_files\3_5_object_without_reference_example.png)
+
+The _garbage collector_ is responsible to identify those "forgotten objects", delete them, and then free the memory space to be used again.
+
+If we want to undo a reference, we can use the special word `None` like this:
+
+``` python
+conta_test = conta # here, conta_test has the same reference as conta
+conta_test = None # and here we delete this reference, but "conta" reference keeps existing
+```
+### 3.9. Challenge: date class
+
+``` python
+class Data:
+
+    def __init__(self, day, month, year):
+        self.day = day
+        self.month = month
+        self.year = year
+
+    def formatada(self):
+        print("{0}/{1}/{2}".format(day, month, year)) 
+```
+
+## 4. Encapsulation
+
